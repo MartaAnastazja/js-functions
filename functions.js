@@ -4,6 +4,13 @@
  * @return {string} the number as a string
  */
 
+function numberToString (number) {
+
+    let string = ``;
+
+    return string += number;
+    
+}
 
 /**
  * Adds one to a given number.
@@ -11,6 +18,11 @@
  * @return {number}
  */
 
+function increase (number) {
+
+    return number+=1;
+
+}
 
 /**
  * Subtracts one from a given number.
@@ -18,6 +30,11 @@
  * @return {number}
  */
 
+ function decrease (number) {
+
+    return number-=1;
+
+ }
 
 /**
  * Adds two numbers.
@@ -26,6 +43,11 @@
  * @return {number} the sum
  */
 
+function add (number1, number2) {
+
+    return number1 + number2;
+
+}
 
 /**
  * Subtracts the second number from the first.
@@ -34,6 +56,11 @@
  * @return {number} the difference
  */
 
+function subtract (number1, number2) {
+
+    return number1 - number2;
+
+}
 
 /**
  * Multiplies two numbers.
@@ -42,6 +69,11 @@
  * @return {number} the product
  */
 
+ function multiply (number1, number2) {
+
+    return number1 * number2;
+
+ }
 
 /**
  * Divides the first number by the second.
@@ -50,12 +82,23 @@
  * @return {number} the quotient
  */
 
+function divide (number1, number2) {
+
+    return number1 / number2;
+
+}
 
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
  * @return {number} squared
  */
+
+ function square (number1) {
+
+    return number1 * number1;
+
+ }
 
 
 /**
@@ -67,6 +110,38 @@
  * @return {number} the result
  */
 
+ function calculate (operation, number1, number2) {
+
+
+    if ( operation === "add" ) {
+
+        console.log( `${number1} + ${number2} = ${add(number1, number2)}`);
+        
+        return add(number1, number2);
+
+    } else if ( operation === "subtract") {
+
+        console.log( `${number1} - ${number2} = ${subtract(number1, number2)}`);
+        
+        return subtract(number1, number2);
+
+    } else if ( operation === "multiply") {
+
+        console.log(`${number1} * ${number2} = ${multiply(number1, number2)}`);
+        
+        return multiply(number1, number2);
+
+    } else if ( operation === "divide") {
+
+        console.log(`${number1} / ${number2} = ${divide(number1, number2)}`);
+        
+        return divide(number1, number2);
+
+    }
+    
+}
+
+(calculate("add",4,7))
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -75,6 +150,17 @@
  * @return {boolean} `a` is larger than `b`
  */
 
+function isGreaterThan (number1, number2) {
+
+    if ( number1 > number2 ) {
+
+        return true;
+
+    }
+
+    return false;
+
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -83,6 +169,17 @@
  * @return {boolean} `a` is smaller than `b`
  */
 
+ function isLessThan (number1, number2) {
+
+    if ( number1 < number2 ) {
+
+        return true;
+
+    }
+
+    return false;
+
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -91,6 +188,17 @@
  * @return {boolean} the numbers are equal
  */
 
+function areEqual (number1, number2) {
+
+    if (number1 === number2) {
+
+        return true;
+
+    }
+
+    return false;
+
+}
 
 /**
  * Returns the smallest value of two numbers.
@@ -99,6 +207,17 @@
  * @return {number} the smallest number
  */
 
+function minimum (number1, number2) {
+
+    if (isLessThan(number1,number2)) {
+
+        return number1;
+
+    }
+
+    return number2;
+
+}
 
 /**
  * Returns the largest value of two numbers.
@@ -107,6 +226,18 @@
  * @return {number} the largest number
  */
 
+function maximum (number1, number2) {
+
+    if (isGreaterThan(number1,number2)) {
+
+        return number1;
+
+    }
+
+    return number2;
+
+}
+
 
 /**
  * Returns true if `n` is even.
@@ -114,12 +245,34 @@
  * @return {boolean} the number is even
  */
 
+function isEven (number) {
+
+    if ( number % 2 === 0) {
+
+        return true;
+    }
+
+    return false;
+
+}
 
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
+
+function isOdd (number) {
+
+    if ( number%2 != 0) {
+
+        return true;
+        
+    }
+
+    return false;
+
+}
 
 
 /**
@@ -134,6 +287,44 @@
  * @return {string} the score represented as a letter grade
  */
 
+function letterGrade (score, total) {
+    
+    let percentage = Math.floor( (score/total) * 100 );
+
+    let grade = [];
+    
+
+    if ( percentage >= 90 && percentage <= 100 ) {
+
+        grade = "A";
+
+    } else if ( percentage >= 80 && percentage <= 90 ) {
+
+        grade = "B";
+
+    } else if ( percentage >=70 && percentage <= 79 ) {
+
+        grade = "C";
+
+    } else if ( percentage >=60 && percentage <= 69 ) {
+
+        grade = "D";
+
+    } else if ( percentage >=0 && percentage <= 59 ) {
+
+        grade = "F";
+
+    }
+
+    return grade;
+
+}
+
+console.log(letterGrade(315,350))
+console.log(letterGrade(287,350))
+console.log(letterGrade(105,350))
+console.log(letterGrade(559,800))
+console.log(letterGrade(2,4))
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -143,6 +334,40 @@
  * @return {object} restaurant
  */
 
+ function incrementReviews (object) {
+
+    // if ( object[Object.keys(object)] != reviews ) {
+    //     return object.reviews = 1;
+    // }
+
+    for (let i = 0; i < Object.keys(object).length; i++) {
+
+        if ( object[Object.keys(object)[i]] == object.reviews ){
+
+            object.reviews++;
+
+            return object
+
+        } 
+          
+    }
+
+    object.reviews = 1;
+    return object
+
+}
+
+var awesomeEatery = {
+    reviews: 1776,
+}
+
+var res = {
+    place: 50,
+}
+
+console.log(incrementReviews(awesomeEatery));
+console.log(incrementReviews(res));
+
 
 /**
  * Joins two strings with a space.
@@ -151,6 +376,12 @@
  * @return {string} joined the words joined with a space
  */
 
+function combine (word1, word2) {
+
+    return word1 + " " + word2;
+
+    
+}
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -160,3 +391,18 @@
  * @return {object} circle
  */
 
+function createCircle (radius) {
+
+    let circle = {
+
+        circumference: 2 * Math.PI *radius,
+
+        area: Math.PI * radius * radius,
+
+    }
+
+    return circle;
+
+}
+
+console.log(createCircle(5));
